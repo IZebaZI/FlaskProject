@@ -6,11 +6,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     connection = mysql.connector.connect(
-        host="localhost",
+        host="mysql",
         user="root",
-        password="",
+        password="root",
         port="3306",
-        database="flask_project"
+        database="db"
     )
 
     cursor = connection.cursor()
@@ -19,7 +19,7 @@ def index():
     cursor.close()
     connection.close()
 
-    return render_template('index.html')
+    return render_template('index.html', students=students)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)

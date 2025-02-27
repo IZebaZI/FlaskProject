@@ -1,5 +1,5 @@
 # SHOW DATABASES;
-USE flask_project;
+USE db;
 
 CREATE TABLE students(
     StudentID int not null AUTO_INCREMENT,
